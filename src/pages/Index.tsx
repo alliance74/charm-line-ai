@@ -1,12 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Header } from "@/components/Header";
+import { LandingPage } from "@/components/LandingPage";
+import { ChatInterface } from "@/components/ChatInterface";
+import { AuthModal } from "@/components/AuthModal";
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<"landing" | "chat">("landing");
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authModalTab, setAuthModalTab] = useState<"login" | "register">("login");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleGetStarted = () => {
+    if (isAuthenticated) {
+      setCurrentView("chat");
+    } else {
+      setAuthModalTab("register");
+      setIsAuthModalOpen(true);
+    }
+  };
+
+  const handleSignIn = () => {
+    setAuthModalTab("login");
+    setIsAuthModalOpen(true);
+  };
+
+  const handleAuthSuccess = () => {
+    setIsAuthenticated(true);
+    setIsAuthModalOpen(false);
+    setCurrentView("chat");
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Header onSignIn={handleSignIn} onGetStarted={handleGetStarted} />
+      
+      {currentView === "landing" ? (
+        <LandingPage onGetStarted={handleGetStarted} />
+      ) : (
+        <ChatInterface />
+      )}
+
+      <AuthModal 
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        defaultTab={authModalTab}
+      />
     </div>
   );
 };
