@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { LandingPage } from "@/components/LandingPage";
 import { ChatInterface } from "@/components/ChatInterface";
 import { AuthModal } from "@/components/AuthModal";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<"landing" | "chat">("landing");
@@ -45,6 +46,8 @@ const Index = () => {
         onClose={() => setIsAuthModalOpen(false)}
         defaultTab={authModalTab}
       />
+      
+      {currentView === "landing" && <Footer />}
     </div>
   );
 };

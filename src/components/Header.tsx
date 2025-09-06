@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button-variants";
 import { MessageSquare, Crown, User, Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 
 interface HeaderProps {
@@ -39,6 +40,7 @@ export const Header = ({ onSignIn, onGetStarted }: HeaderProps) => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-3">
+            <ThemeToggle />
             <Button variant="ghost" size="sm" onClick={onSignIn}>
               Sign In
             </Button>
@@ -84,6 +86,9 @@ export const Header = ({ onSignIn, onGetStarted }: HeaderProps) => {
                 About
               </a>
               <div className="flex flex-col space-y-2 px-3 py-2">
+                <div className="flex justify-center py-2">
+                  <ThemeToggle />
+                </div>
                 <Button variant="ghost" size="sm" className="w-full" onClick={onSignIn}>
                   Sign In
                 </Button>
