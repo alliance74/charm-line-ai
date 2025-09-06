@@ -246,4 +246,12 @@
     @apply bg-secondary text-secondary-foreground rounded-2xl px-4 py-2 max-w-xs mr-auto;
     background: var(--gradient-secondary);
   }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

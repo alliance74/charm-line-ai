@@ -27,14 +27,14 @@ export const Header = ({ onSignIn, onGetStarted }: HeaderProps) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-smooth">
+            <a href="/#features" className="text-muted-foreground hover:text-foreground transition-smooth">
               Features
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-smooth">
+            <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-smooth">
               Pricing
             </a>
-            <a href="#about" className="text-muted-foreground hover:text-foreground transition-smooth">
-              About
+            <a href="/referrals" className="text-muted-foreground hover:text-foreground transition-smooth">
+              Referrals
             </a>
           </nav>
 
@@ -65,25 +65,25 @@ export const Header = ({ onSignIn, onGetStarted }: HeaderProps) => {
           <div className="md:hidden animate-slide-up">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 rounded-lg mt-2 border border-border/20">
               <a
-                href="#features"
+                href="/#features"
                 className="block px-3 py-2 text-base text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Features
               </a>
               <a
-                href="#pricing"
+                href="/pricing"
                 className="block px-3 py-2 text-base text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
               </a>
               <a
-                href="#about"
+                href="/referrals"
                 className="block px-3 py-2 text-base text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                Referrals
               </a>
               <div className="flex flex-col space-y-2 px-3 py-2">
                 <div className="flex justify-center py-2">

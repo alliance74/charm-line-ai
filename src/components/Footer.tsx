@@ -22,9 +22,9 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Product</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#features" className="hover:text-primary transition-smooth">Features</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-smooth">Pricing</a></li>
-              <li><a href="#testimonials" className="hover:text-primary transition-smooth">Reviews</a></li>
+              <li><a href="/#features" className="hover:text-primary transition-smooth">Features</a></li>
+              <li><a href="/pricing" className="hover:text-primary transition-smooth">Pricing</a></li>
+              <li><a href="/#testimonials" className="hover:text-primary transition-smooth">Reviews</a></li>
               <li><a href="/referrals" className="hover:text-primary transition-smooth">Referral Program</a></li>
             </ul>
           </div>
